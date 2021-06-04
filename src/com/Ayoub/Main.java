@@ -19,5 +19,23 @@ public class Main {
 		List<Character> carPath = ride.getShortestPath('A', 'F');
 		System.out.println(ride.toString(carPath));
 
+
+		Flight flight = new Flight();
+
+		// A = Amsterdam | B = Barcelona | R = Rome | L = London | C = Copenhagen | W = Warsaw
+		// N = New York | M = Moscow | Z = Zimbabwe
+
+		flight.addStep('A', Arrays.asList(new Step('B', 355), new Step('C', 350),new Step('M', 900)));
+		flight.addStep('B', Collections.singletonList(new Step('R', 201)));
+		flight.addStep('R', Collections.singletonList(new Step('N', 1850)));
+		flight.addStep('C', Arrays.asList(new Step('R', 309), new Step('L', 1788)));
+		flight.addStep('L', Arrays.asList(new Step('N', 1790), new Step('W', 670)));
+		flight.addStep('M', Collections.singletonList(new Step('Z', 2081)));
+		flight.addStep('Z', Collections.singletonList(new Step('W', 1455)));
+		flight.addStep('W', Collections.singletonList(new Step('N', 2145)));
+		flight.addStep('N', Collections.singletonList(new Step('W', 2145)));
+
+		List<Character> flightPath = flight.getShortestPath('A', 'N');
+		System.out.println(flight.toString(flightPath));
 	}
 }
