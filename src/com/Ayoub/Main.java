@@ -37,5 +37,19 @@ public class Main {
 
 		List<Character> flightPath = flight.getShortestPath('A', 'N');
 		System.out.println(flight.toString(flightPath));
+
+
+		TrainRide tRide = new TrainRide();
+
+		// A = Amsterdam | U = Utrecht | R = Rotterdam | G = Groningen | F = Flevoland
+
+		tRide.addStep('A', Arrays.asList(new Step('U', 53),new Step('U', 84)));
+		tRide.addStep('U', Arrays.asList(new Step('R', 44), new Step('G', 60)));
+		tRide.addStep('R', Collections.singletonList(new Step('F', 38)));
+		tRide.addStep('G', Collections.singletonList(new Step('A', 77)));
+		tRide.addStep('F', Collections.singletonList(new Step('G', 24)));
+
+		List<Character> trainPath = tRide.getShortestPath('A', 'G');
+		System.out.println(tRide.toString(trainPath));
 	}
 }
