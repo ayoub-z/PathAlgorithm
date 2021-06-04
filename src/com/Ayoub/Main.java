@@ -43,7 +43,7 @@ public class Main {
 
 		// A = Amsterdam | U = Utrecht | R = Rotterdam | G = Groningen | F = Flevoland
 
-		tRide.addStep('A', Arrays.asList(new Step('U', 53),new Step('U', 84)));
+		tRide.addStep('A', Arrays.asList(new Step('U', 53),new Step('R', 84)));
 		tRide.addStep('U', Arrays.asList(new Step('R', 44), new Step('G', 60)));
 		tRide.addStep('R', Collections.singletonList(new Step('F', 38)));
 		tRide.addStep('G', Collections.singletonList(new Step('A', 77)));
